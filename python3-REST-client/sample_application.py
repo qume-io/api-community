@@ -78,7 +78,7 @@ def test_api_methods():
     print("get_trade_history:\n", result)
 
     # edit the current leverage for a given position
-    result = qume_client.edit_position_leverage("BTCUSDQ", 6.75)
+    result = qume_client.edit_position_leverage("BTCUSDQ", 10.00)
     print("edit_position_leverage:\n", result)
 
     # get all wallets

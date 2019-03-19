@@ -62,7 +62,7 @@ class qume_api_methods(object):
     def delete_active_order(self, order_id):
         endpoint = "/v1/orders"
         post_url_string = "/%s" % order_id
-        return self.make_request("GET", endpoint, post_url_string=post_url_string)
+        return self.make_request("DELETE", endpoint, post_url_string=post_url_string)
 
     # returns the complete trade history
     def get_trade_history(self):
@@ -134,5 +134,9 @@ class qume_api_methods(object):
         elif request_type == "PUT":
             payload = post_body
             r = requests.put(url, headers=http_headers, data=payload)
+        elif request_type == "DELETE":
+            payload = post_body
+            r = requests.delete(url, headers=http_headers, data=payload)
+
 
         return r.text
